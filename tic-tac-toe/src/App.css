@@ -1,0 +1,210 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* Reset default margins and ensure full height */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.App {
+  text-align: center;
+  padding: 20px;
+}
+
+h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 2rem;
+  background: linear-gradient(90deg, #ff6f61, #6b5b95);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* Game Board */
+.game-board {
+  background-color: #ffffff;
+  padding: 2.5rem; /* Increased padding for more internal spacing */
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  max-width: 450px; /* Slightly increased width to accommodate larger gaps */
+  margin: 0 auto;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Status */
+.status {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 2rem; /* Increased margin for better separation */
+  transition: color 0.3s ease;
+}
+
+.winner-status {
+  color: #ff6f61;
+  animation: pulse 1.5s infinite;
+}
+
+/* Board */
+.board {
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  gap: 15px; /* Increased gap between rows */
+  margin-bottom: 2rem; /* Increased margin below the board */
+}
+
+.board-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px; /* Increased gap between squares in a row */
+}
+
+/* Square */
+.square {
+  background-color: #f9f9f9;
+  border: none;
+  border-radius: 10px;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #333;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.square:hover {
+  background-color: #e8ecef;
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.square:focus {
+  outline: none;
+}
+
+/* Winning Square */
+.winning-square {
+  background: linear-gradient(90deg, #ff6f61, #6b5b95);
+  color: #fff;
+  animation: glow 1s infinite alternate;
+}
+
+/* X and O Colors */
+.square:not(.winning-square) {
+  color: #ff6f61; /* Default color for X */
+}
+
+.square:not(.winning-square):not(:empty):not(:first-child) {
+  color: #6b5b95; /* Color for O (simplified logic for alternating) */
+}
+
+/* Reset Button */
+.reset-button {
+  background: linear-gradient(90deg, #ff6f61, #6b5b95);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 0.75rem 2rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  margin-top: 2rem; /* Added margin to create more space above the button */
+}
+
+.reset-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.reset-button:active {
+  transform: translateY(0);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 10px rgba(255, 111, 97, 0.5);
+  }
+  100% {
+    box-shadow: 0 0 20px rgba(255, 111, 97, 0.8);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  .game-board {
+    padding: 1.5rem;
+  }
+
+  .square {
+    width: 80px;
+    height: 80px;
+    font-size: 2rem;
+  }
+
+  .board {
+    gap: 10px; /* Slightly reduced gap for smaller screens */
+  }
+
+  .board-row {
+    gap: 10px; /* Slightly reduced gap for smaller screens */
+  }
+
+  .status {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .reset-button {
+    padding: 0.5rem 1.5rem;
+    font-size: 1rem;
+    margin-top: 1.5rem; /* Adjusted margin for smaller screens */
+  }
+}
