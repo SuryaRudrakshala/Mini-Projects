@@ -68,12 +68,14 @@ h1 {
 .board-row {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  padding-top: 2px;
   gap: 15px; /* Increased gap between squares in a row */
 }
 
 /* Square */
 .square {
   background-color: #f9f9f9;
+  
   border: none;
   border-radius: 10px;
   font-size: 2.5rem;
