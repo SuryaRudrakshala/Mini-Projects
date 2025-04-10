@@ -1,0 +1,179 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* Reset default margins and ensure full height */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #a1c4fd, #c2e9fb); /* Soft gradient background */
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Main App Container */
+.App {
+  text-align: center;
+  padding-left: 5rem; 
+  padding-top: 1.5rem;
+  padding-bottom: 1rem;
+  padding-right: 8rem; /* Increased padding for more breathing room */
+  background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white for a frosted glass effect */
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  max-width: 1000px; /* Slightly wider container */
+  margin: 0 auto;
+  justify-content: center;
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* Heading */
+h1 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  background: linear-gradient(90deg, #ff6f61, #6b5b95); /* Gradient text */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 1.5rem; /* Increased margin for better spacing */
+}
+
+/* Round and Game Over Text */
+h2, p {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #444;
+  margin: 15px 0; /* Increased margin for better spacing */
+  transition: color 0.3s ease;
+}
+
+p {
+  color: #ff6f61; /* Red color for game over message */
+  font-weight: 600;
+}
+
+/* Matrix Grid */
+.matrix-grid {
+  display: grid;
+  gap: 15px; /* Increased gap for better spacing between squares */
+  max-width: 400px; /* Adjusted width to fit larger squares */
+  margin: 25px auto; /* Increased margin for better centering */
+}
+
+/* Matrix Square */
+.matrix-square {
+  width: 80px; /* Increased size for better visibility */
+  height: 80px;
+  background-color: #e0e0e0;
+  border: 3px solid #bbb; /* Slightly thicker border */
+  border-radius: 12px; /* More rounded corners */
+  transition: all 0.3s ease; /* Smooth transitions for all properties */
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Added shadow for depth */
+}
+
+.matrix-square:hover {
+  transform: scale(1.05); /* Slight scale-up on hover */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
+}
+
+/* Highlighted Square (during pattern display) */
+.matrix-square.highlight {
+  background-color: #ffd54f;
+  border-color: #ffa000;
+  animation: pulse 0.5s infinite; /* Pulsating effect for highlighted squares */
+}
+
+/* Clicked Square (user selection) */
+.matrix-square.clicked {
+  background-color: #81c784;
+  border-color: #388e3c;
+  transform: scale(0.95); /* Slight scale-down on click for feedback */
+  box-shadow: inset 0 3px 10px rgba(0, 0, 0, 0.1); /* Inset shadow for pressed effect */
+}
+
+/* Reset Button */
+.reset-button {
+  margin-top: 15px; /* Increased margin for more space above the button */
+  padding: 12px 30px; /* Larger padding for a more prominent button */
+  font-size: 1.2rem;
+  font-weight: 600;
+  background: linear-gradient(90deg, #ff6f61, #6b5b95); /* Gradient background */
+  color: white;
+  border: none;
+  border-radius: 10px; /* More rounded corners */
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Added shadow for depth */
+}
+
+.reset-button:hover {
+  background: linear-gradient(90deg, #f4511e, #5a4b7d); /* Darker gradient on hover */
+  transform: translateY(-3px); /* Lift effect on hover */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
+}
+
+.reset-button:active {
+  transform: translateY(0); /* Reset position on click */
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2); /* Reduced shadow on click */
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .App {
+    padding: 2rem;
+  }
+
+  h1 {
+    font-size: 2.2rem;
+  }
+
+  h2, p {
+    font-size: 1rem;
+    margin: 10px 0;
+  }
+
+  .matrix-grid {
+    gap: 10px;
+    max-width: 300px;
+  }
+
+  .matrix-square {
+    width: 60px;
+    height: 60px;
+  }
+
+  .reset-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1rem;
+  }
+}
