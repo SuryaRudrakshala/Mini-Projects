@@ -69,22 +69,22 @@ function App() {
           <div className="project-item">
             <h3>Tic-Tac-Toe</h3>
             <p>A classic two-player game built using React that lets users compete, track turns, and restart.</p>
-            <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="project-link">
-              View on GitHub
+            <a href="https://tic-tac-toe-zeta-orcin.vercel.app/" target="_blank" rel="noopener noreferrer" className="project-link">
+              View Project
             </a>
           </div>
           <div className="project-item">
             <h3>Memory-Matrix</h3>
             <p>Challenge your visual memory by memorizing and recreating a pattern of squares round by round.</p>
-            <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="project-link">
-              View on GitHub
+            <a href="https://memorize-matrix.vercel.app/" target="_blank" rel="noopener noreferrer" className="project-link">
+              View Project
             </a>
           </div>
           <div className="project-item">
             <h3>Instant-Task-Tracker</h3>
             <p>Manage tasks efficiently with a clean UI, Pomodoro timer, and real-time progress tracking.</p>
-            <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="project-link">
-              View on GitHub
+            <a href="https://instant-task-tracker.vercel.app/" target="_blank" rel="noopener noreferrer" className="project-link">
+              View Project
             </a>
           </div>
         </div>
